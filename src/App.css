@@ -1,0 +1,69 @@
+body {
+	background-image:url('images/comic.jpg') ;
+	color: #ffffff;
+}
+
+.movie-app > .row {
+	overflow-x: auto !important;
+	flex-wrap: wrap !important;
+}
+
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+}
+
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 1;
+}
+
+.overlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 0;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
+
+
+
+.navbarLinks{
+	color:white ;
+	align-content: center;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+.navbarLinks:hover{
+	color:darkred ;
+}
+
+
+
+
+
+
+
+
+
+
