@@ -15,8 +15,8 @@ const MovieList = (props) => {
         <>
             {filteredMovies.map((movie, index) => (
 
-                <div onClick={() => props.handleDisplayDetails(movie["Title"])} className='image-container d-flex justify-content-start m-3'>
-                    <img src={movie.Poster} alt={movie} />
+                <div  className='image-container d-flex justify-content-start m-3'>
+                    <img onClick={() => props.handleDisplayDetails(movie)} src={movie.Poster} alt={movie} />
                     <div
                         onClick={() => props.handleFavouritesClick(movie)}
                         className='overlay d-flex align-items-center justify-content-center'

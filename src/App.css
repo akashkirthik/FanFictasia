@@ -186,8 +186,17 @@ a:active {
     10px -90px 80px  #973716;}
 }
 
+.modalPlot{
+    font-family:  Amethysta, fantasy;
+    font-weight: bolder;
+    font-size: larger;
 
 
+}
+.modalDialog{
+    background-image: url('images/comic.jpg');
+    color: white;
+}
 
 
 
