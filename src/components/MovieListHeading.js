@@ -5,17 +5,22 @@ import '../App.css'
 const MovieListHeading = (props) => {
 
     return (
-        <div className='col '>
-            <div className='row '>
-                <h1 >{props.heading}</h1>
-				<Link to="/"  >
-                    <h1 className={'navbarLinks'}><a>Home</a></h1>
+        <div className='col'>
+            <div className='row'>
 
-				</Link>
-				<Link to="/fav" >
-                    <h1 className={'navbarLinks'}><a>Favourites</a></h1>
 
-				</Link>
+                <link href='https://fonts.googleapis.com/css?family=Caesar+Dressing' rel='stylesheet' type='text/css'/>
+                <h1 className={'navbarSpan'}>{props.heading}</h1>
+
+                <link href='https://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'/>
+                <Link to="/">
+                    <h1 className={'navbarLink'}>HOME</h1>
+
+                </Link>
+                <Link to="/fav">
+                    <h1 className={'navbarLink'}>FAVOURITES</h1>
+
+                </Link>
 
 
             </div>

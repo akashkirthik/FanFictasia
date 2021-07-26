@@ -6,7 +6,7 @@ import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +21,7 @@ const App = () => {
 	const notifyRemove=()=>toast("Removed from favourites :(")
 
 	const getMovieRequest = async (searchValue) => {
-		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=554b3be1`;
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=6fc0e00`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
@@ -30,6 +30,7 @@ const App = () => {
 			setMovies(responseJson.Search);
 		}
 	};
+
 
 	useEffect(() => {
 		getMovieRequest(searchValue);
@@ -49,7 +50,13 @@ const App = () => {
 		console.log(JSON.stringify(items))
 		localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
 	};
-
+	const displayMovieDetails=async (movie) => {
+		const url = `http://www.omdbapi.com/?t=${movie}&apikey=6fc0e00`;
+		const response = await fetch(url);
+		const responseJson = await response.json();
+		console.log(responseJson)
+		return responseJson
+	}
 	const addFavouriteMovie = (movie) => {
 		const newFavouriteList = [...favourites, movie];
 		setFavourites(newFavouriteList);
@@ -74,13 +81,14 @@ const App = () => {
 			<Router>
 
 				<Route  path="/" exact>
-					<div className='row d-flex align-items-center mt-4 mb-4'>
+					<div className='row d-flex align-items-center mt-4 mb-4 '>
 						<MovieListHeading heading='FanFictasia' />
 						<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 					</div>
-					<div className='row'>
+					<div className='row '>
 						<MovieList
 							movies={movies}
+							handleDisplayDetails={displayMovieDetails}
 							handleFavouritesClick={addFavouriteMovie}
 							favouriteComponent={AddFavourites}
 						/>
@@ -89,7 +97,7 @@ const App = () => {
 
 			<Route exact path='/fav'>
 				<div className='row d-flex align-items-center mt-4 mb-4'>
-					<MovieListHeading heading='MOVIES' />
+					<MovieListHeading heading='FanFictasia' />
 
 				</div>
 				<div className='row'>
