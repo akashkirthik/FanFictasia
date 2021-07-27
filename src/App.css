@@ -3,10 +3,10 @@ body {
     color: #ffffff;
 }
 
-.movie-app > .row {
-    overflow-x: auto !important;
-    flex-wrap: wrap !important;
-}
+/*.movie-app > .row {*/
+/*    overflow-x: auto !important;*/
+/*    flex-wrap: wrap !important;*/
+/*}*/
 
 .image-container {
     position: relative;
@@ -67,30 +67,71 @@ a:active {
 
 
 
+@media (max-width: 1333px) {
+    .navbarSpan {
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 20px;
+        color: #ffffff;
+        font-family: 'Caesar Dressing', cursive;
+        font-size: 75px;
+        text-transform: lowercase;
+        vertical-align: middle;
 
-.navbarSpan {
-    align-content: center;
-    padding-left: 10px;
-    padding-right: 20px;
-    color: #ffffff;
-    font-family: 'Caesar Dressing', cursive;
-    font-size: 75px;
-    text-transform: lowercase;
-    vertical-align: middle;
+    }
 
+    .navbarLink {
+        letter-spacing: 2px;
+        align-content: center;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 20px;
+        color: #ffffff;
+        font-family: 'Amethysta', cursive;
+        font-size: 50px;
+
+    }
 }
 
-.navbarLink {
-    letter-spacing: 2px;
-    align-content: center;
-    padding-top: 20px;
-    padding-left: 100px;
-    padding-right: 20px;
-    color: #ffffff;
-    font-family: 'Amethysta', cursive;
-    font-size: 50px;
 
+
+@media (min-width: 1333px) {
+    .navbarSpan {
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 20px;
+        color: #ffffff;
+        font-family: 'Caesar Dressing', cursive;
+        font-size: 75px;
+        text-transform: lowercase;
+        vertical-align: middle;
+
+    }
+
+    .navbarLink {
+        letter-spacing: 2px;
+        align-content: center;
+        padding-top: 20px;
+        padding-left: 30%;
+        padding-right: 20px;
+        color: #ffffff;
+        font-family: 'Amethysta', cursive;
+        font-size: 50px;
+
+    }
 }
+@media (max-width: 800px)  {
+    .navbarSearch{
+        width: 100%;
+    }
+}
+@media (min-width: 800px)  {
+    .navbarSearch{
+        width: 25%;
+    }
+}
+
+
 .navbarLink:hover {
     color: darkred;
 

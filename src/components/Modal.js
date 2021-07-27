@@ -74,7 +74,7 @@ export default function CustomizedDialogs(props) {
                         </p>
 
                     </Typography>
-                    
+
 
                 </DialogContent>
 
