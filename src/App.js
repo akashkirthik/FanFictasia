@@ -14,6 +14,7 @@ import Modal from './components/Modal'
 const App = () => {
     const [movies, setMovies] = useState([]);
     const [favourites, setFavourites] = useState([]);
+    
     const [searchValue, setSearchValue] = useState('');
     const [openModal, setOpenModal] = useState(false);
     const [movieDetails, setResponse] = useState('');
