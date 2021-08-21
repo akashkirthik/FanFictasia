@@ -14,7 +14,6 @@ import Modal from './components/Modal'
 const App = () => {
     const [movies, setMovies] = useState([]);
     const [favourites, setFavourites] = useState([]);
-    
     const [searchValue, setSearchValue] = useState('');
     const [openModal, setOpenModal] = useState(false);
     const [movieDetails, setResponse] = useState('');
@@ -23,7 +22,8 @@ const App = () => {
     const notifyRemove = () => toast("Removed from favourites :(")
 
     const getMovieRequest = async (searchValue) => {
-        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=6fc0e00`;
+        require('dotenv').config()
+        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}`;
 
         const response = await fetch(url);
         const responseJson = await response.json();
@@ -53,7 +53,8 @@ const App = () => {
         localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
     };
     const displayDetails = async (movie) => {
-        let url = `http://www.omdbapi.com/?t=${movie['Title']}&apikey=6fc0e00`;
+        require('dotenv').config()
+        let url = `http://www.omdbapi.com/?t=${movie['Title']}&apikey=${process.env.REACT_APP_API_KEY}`;
         url = url.replaceAll(" ", "%20");
         // console.log(url);
         const response = await fetch(url);
